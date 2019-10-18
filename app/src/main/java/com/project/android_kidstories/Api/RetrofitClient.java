@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     //private static final String BASE_URL = "https://api-kidstories.herokuapp.com/api/v1/";
-    private static final String BASE_URL = "http://54.144.121.183:8000/api/v1/";
+    private static final String BASE_URL = "http://kidstories.app/api/v1/";
     private static Retrofit INSTANCE;
 
 

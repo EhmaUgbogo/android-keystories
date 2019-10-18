@@ -53,6 +53,8 @@ public interface Api {
     @GET("auth/user")
     Call<DataResponse> getUser(@Header("Authorization")String token);
 
+    /*@FormUrlEncoded
+    @PUT("auth/change-password")*/
     @GET("auth/change-password")
     Call<BaseResponse<DataResponse>> changeUserPassword(@Header("Authorization") String token,
                                                         @Field("old_password") String oldPassword,
@@ -77,7 +79,7 @@ public interface Api {
     //Story APIs
 
     @GET("stories/{id}")
-    Call<StoryBaseResponse> getStory(@Path("id") int id);
+    Call<StoryBaseResponse> getStory(@Header("Authorization") String token, @Path("id") int id);
 
     @GET("stories")
     Call<StoryAllResponse> getAllStories();
@@ -167,7 +169,7 @@ public interface Api {
     @GET("categories/{id}")
     Call<BaseResponse<Category>> getCategory(@Path("id") String categoryId);
 
-    @GET("categories/{id}/stories")
+    @GET("catergories/{id}/stories")
     Call<BaseResponse<CategoryStoriesResponse>> getStoriesByCategoryIdandUser(@Path("id") String categoryId);
 
 
